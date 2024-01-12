@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: victor-deployment
+  labels:
+    app: victor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: victor
+  template:
+    metadata:
+      labels:
+        app: victor
+    spec:
+      containers:
+      - name: victor
+        image: victormongi/elysia:1.0.2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NAME
+          value: victor mongi
