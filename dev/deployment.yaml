@@ -5,7 +5,7 @@ metadata:
   labels:
     app: victor
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: victor
@@ -15,11 +15,19 @@ spec:
         app: victor
     spec:
       containers:
-      - name: victor
-        image: victormongi/elysia:1.0.2
+      - name: victor-elysia
+        image: victormongi/elysia:1.0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
         env:
         - name: NAME
-          value: victor mongi
+          valueFrom:
+           secretKeyRef:
+            name: secret-coba
+            key: nama
+        - name: BUILD_NUMBER
+          valueFrom:
+           secretKeyRef:
+            name: secret-coba
+            key: build_number
