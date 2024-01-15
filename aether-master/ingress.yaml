@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: victor-ingress
+  name: aether-master-ingress
   namespace: default
 spec:
   ingressClassName: nginx
   rules:
-  - host: victor.rsupkandou.com
+  - host: k8s-aether-master.rsupkandou.com
     http:
       paths:
       - backend:
           service:
-            name: victor-service
+            name: aether-master-service
             port:
               number: 8080
         path: /
