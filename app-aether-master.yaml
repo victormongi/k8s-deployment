@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitlab.rsupkandou.id/devops/victor-elysia.git
+    repoURL: https://github.com/victormongi/k8s-deployment
     targetRevision: HEAD
     path: aether-master
   destination:
