@@ -11,6 +11,7 @@ spec:
       app: aether-master
   template:
     metadata:
+      namespace: aether
       labels:
         app: aether-master
     spec:
