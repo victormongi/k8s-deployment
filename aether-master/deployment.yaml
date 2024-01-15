@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aether-master-deployment
+  labels:
+    app: aether-master
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aether-master
+  template:
+    metadata:
+      labels:
+        app: aether-master
+    spec:
+      containers:
+      - name: aether-master
+        image: artifact.rsupkandou.id/k8s/aether_master:20
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NAME
+          value: victor mongi

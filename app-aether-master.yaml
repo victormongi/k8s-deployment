@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aether-master
+  namespace: aether
+spec:
+  project: default
+  source:
+    repoURL: https://gitlab.rsupkandou.id/devops/victor-elysia.git
+    targetRevision: HEAD
+    path: aether-master
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: aether
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
