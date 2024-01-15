@@ -17,6 +17,8 @@ spec:
       containers:
       - name: aether-master
         image: artifact.rsupkandou.id/k8s/aether_master:20
+        imagePullSecrets:
+        - name: docker-hub-cred
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
