@@ -18,11 +18,11 @@ spec:
       containers:
       - name: aether-master
         image: artifact.rsupkandou.id/k8s/aether_master:20
-        imagePullSecrets:
-        - name: registry-secret
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
         env:
         - name: NAME
           value: victor mongi
+      imagePullSecrets:
+      - name: registry-secret
