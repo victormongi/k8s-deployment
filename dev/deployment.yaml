@@ -5,7 +5,7 @@ metadata:
   labels:
     app: victor
 spec:
-  replicas: 100
+  replicas: 4
   selector:
     matchLabels:
       app: victor
@@ -23,11 +23,11 @@ spec:
         env:
         - name: NAME
           valueFrom:
-           secretKeyRef:
-            name: secret-coba
-            key: nama
+            secretKeyRef:
+              name: secret-coba
+              key: nama
         - name: BUILD_NUMBER
           valueFrom:
-           secretKeyRef:
-            name: secret-coba
-            key: build_number
+            secretKeyRef:
+              name: secret-coba
+              key: build_number
